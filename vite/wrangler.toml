@@ -1,0 +1,12 @@
+name = "dating-ui"
+compatibility_date = "2024-01-01"
+
+# Pages 配置
+pages_build_output_dir = "dist"
+
+# 环境变量配置
+[env.preview.vars]
+VITE_API_URL = "http://localhost:8787"
+
+[env.production.vars]
+VITE_API_URL = "https://dating-app.nedumarandre.workers.dev"

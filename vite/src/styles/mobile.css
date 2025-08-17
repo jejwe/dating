@@ -1,0 +1,119 @@
+/* Mobile-optimized touch interactions and responsive design */
+
+/* Touch-friendly buttons and interactive elements */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Enhanced touch feedback */
+@media (hover: none) and (pointer: coarse) {
+  .button-touch {
+    -webkit-tap-highlight-color: rgba(99, 102, 241, 0.3);
+    transition: transform 0.1s ease;
+  }
+  
+  .button-touch:active {
+    transform: scale(0.95);
+  }
+}
+
+/* Swipe gestures for cards */
+.swipe-card {
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Optimized scrolling for mobile */
+.scroll-container {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* Prevent zoom on input focus */
+input, textarea, select {
+  font-size: 16px !important;
+  touch-action: manipulation;
+}
+
+/* Safe area handling for notched devices */
+.safe-area-top {
+  padding-top: env(safe-area-inset-top);
+}
+
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Responsive breakpoints */
+@media (max-width: 640px) {
+  .mobile-full-width {
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+  
+  .mobile-stack {
+    flex-direction: column;
+  }
+  
+  .mobile-text-sm {
+    font-size: 0.875rem;
+  }
+  
+  .mobile-spacing-xs {
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-compact {
+    padding: 0.5rem;
+  }
+  
+  .mobile-text-xs {
+    font-size: 0.75rem;
+  }
+}
+
+/* Portrait vs Landscape optimizations */
+@media (orientation: portrait) {
+  .portrait-optimized {
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+}
+
+@media (orientation: landscape) {
+  .landscape-optimized {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .retina-optimized {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+/* Dark mode optimizations */
+@media (prefers-color-scheme: dark) {
+  .dark-optimized {
+    color-scheme: dark;
+  }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
